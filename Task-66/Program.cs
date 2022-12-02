@@ -8,7 +8,9 @@ int m = int.Parse(Console.ReadLine()!);
 
 Console.Write("Введите число N: ");
 int n = int.Parse(Console.ReadLine()!);
+
 int result = SumOfNumbersFromMtoN(m, n);
+
 Console.WriteLine($"Cуммa чисел от {m} до {n} равна {result}");
 
 
