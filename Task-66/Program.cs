@@ -4,31 +4,22 @@
 // M = 4; N = 8. -> 30
 
 Console.Write("Введите число M: ");
-int m = int.Parse(Console.ReadLine());
+int m = int.Parse(Console.ReadLine()!);
 
 Console.Write("Введите число N: ");
-int n = int.Parse(Console.ReadLine());
+int n = int.Parse(Console.ReadLine()!);
+int result = SumOfNumbersFromMtoN(m, n);
+Console.WriteLine($"Cуммa чисел от {m} до {n} равна {result}");
 
-SumFromMToN(m, n);
 
-// вызов функции "сумма чисел от M до N"
-void SumFromMToN(int m, int n)
+int SumOfNumbersFromMtoN(int m, int n)
 {
-    Console.Write(SumMN(m - 1, n));
-}
-
-// функция сумма чисел от M до N
-int SumMN(int m, int n)
-{
-    int res = m;
-    if (m == n)
-        return 0;
-    else
+    int result = 0;  
+    while (m <=n)
     {
-        m++;
-        res = m + SumMN(m, n);
-        return res;
+       result = result+m; m++;
+       SumOfNumbersFromMtoN(m, n); 
     }
+    return result;
 }
-
 
